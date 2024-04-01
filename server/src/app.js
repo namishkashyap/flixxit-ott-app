@@ -1,12 +1,13 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import { ORIGIN_URI } from "./constants.js"
+// import { ORIGIN_URI } from "./constants.js"
 
 
 const app = express()
 app.use(cors({
-    origin: `${ORIGIN_URI}`,
+    origin: ["https://flixxit-frontend-beta.vercel.app/"],
+    methods: ["POST", "GET", "PUT"],
     credentials: true
 }))
 
