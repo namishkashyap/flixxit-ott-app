@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 app.use(cors({
-    origin: ["https://flixxit-frontend-beta.vercel.app/"],
+    origin: ["https://flixxit-frontend-beta.vercel.app"],
     methods: ["POST", "GET", "PUT"],
     credentials: true
 }))
