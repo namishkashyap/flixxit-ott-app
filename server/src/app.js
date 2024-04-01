@@ -1,11 +1,12 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import { ORIGIN_URI } from "./constants.js"
 
 
 const app = express()
 app.use(cors({
-    origin: "http://localhost:8000",
+    origin: `${ORIGIN_URI}`,
     credentials: true
 }))
 
