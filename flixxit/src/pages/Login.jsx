@@ -20,7 +20,7 @@ export default function Login(props) {
     e.preventDefault();
     const user = { email, password };
     try {
-      const res = await axios.post(`${API_END_POINT}/login`, user, {
+      const res = await axios.post(`${API_END_POINT}/user/login`, user, {
         headers: {
           "Content-Type": "application/json",
         },
