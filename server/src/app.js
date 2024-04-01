@@ -6,7 +6,8 @@ import { ORIGIN_URI } from "./constants.js"
 
 const app = express()
 app.use(cors({
-    origin: `${ORIGIN_URI}`,
+    origin: [`${ORIGIN_URI}`],
+    methods: true,
     credentials: true
 }))
 
