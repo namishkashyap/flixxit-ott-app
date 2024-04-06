@@ -259,6 +259,8 @@ const Container = styled.div`
     background: #fff;
     flex-direction: column;
     width: max-content;
+    min-width: 150px;
+    text-align: center;
   }
   .settingButton {
     padding: 15px 5px;
