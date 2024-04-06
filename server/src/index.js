@@ -1,4 +1,4 @@
-import dotenv from "dotenv"
+require('dotenv').config()
 import connectdb from "./db/dbindex.js";
 import { app } from "./app.js";
 
