@@ -1,5 +1,5 @@
 require('dotenv').config()
-import connectdb from "./db/dbindex";
+import connectdb from "./db/dbindex.js";
 import { app } from "./app.js";
 
 dotenv.config({
