@@ -68,6 +68,7 @@ export default function Navbar() {
             </ul>
           </nav>
           <div id="rightNavIcon">
+
             <div className="profileContainer">
               <FaUserAstronaut className="profileIcon" />
               <div className="profileOption">
