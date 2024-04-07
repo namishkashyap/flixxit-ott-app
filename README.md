@@ -26,7 +26,7 @@ This repository contains a shopping app built using the MERN Fullstack OTT platf
 
 ---
 
-> [Working Demo](https://flixxit-frontend-beta.vercel.app/){:target="_blank"}
+> [Working Demo](https://flixxit-frontend-beta.vercel.app/)
 
 ---
 
