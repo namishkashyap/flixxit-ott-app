@@ -75,10 +75,10 @@ const Container = styled.div`
       place-items: center;
       position: absolute;
       z-index: 99;
-      height: 100%;
-      width: 50px;
-      top: 40px;
-      bottom: 0;
+height: 296px;
+    width: 150px;
+    top: 94px;
+    bottom: 0px;
       transition: 0.3s ease-in-out;
       svg {
         font-size: 2rem;
@@ -86,9 +86,11 @@ const Container = styled.div`
     }
     .left {
       left: 0;
+      background: linear-gradient(to left, #0000, #141414);
     }
     .right {
       right: 0;
+      background: linear-gradient(to right, #0000, #141414);
     }
     .bALalJ {
       overflow: visible;
