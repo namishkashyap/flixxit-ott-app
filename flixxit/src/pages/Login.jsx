@@ -54,7 +54,7 @@ export default function Login(props) {
         <div className="signupForm">
           <div className="headingText">
             <img src={FlexxitLogo} alt="Logo" id="logo" />
-            <h2>Join Us</h2>
+            <h2>Login</h2>
           </div>
           <form method="post" onSubmit={handleSubmit}>
             <div className="textArea">
