@@ -1,3 +1,4 @@
+// Handeling error response
 class apiError extends Error {
     constructor(
         statusCode,

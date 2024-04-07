@@ -31,11 +31,6 @@ export default function Navbar() {
     }
   };
 
-  //Search handler
-
-  const searchHandler = async (e) => {
-    console.log(user);
-  };
   return (
     <Container>
       <div id="header-container">
@@ -73,15 +68,6 @@ export default function Navbar() {
             </ul>
           </nav>
           <div id="rightNavIcon">
-            <div className="searchBarContainer">
-              <input
-                onClick={searchHandler}
-                placeholder="Search"
-                className="searchBar"
-                type="input"
-              />
-              <FaSearch />
-            </div>
             <div className="profileContainer">
               <FaUserAstronaut className="profileIcon" />
               <div className="profileOption">
@@ -259,6 +245,8 @@ const Container = styled.div`
     background: #fff;
     flex-direction: column;
     width: max-content;
+    min-width: 150px;
+    text-align: center;
   }
   .settingButton {
     padding: 15px 5px;

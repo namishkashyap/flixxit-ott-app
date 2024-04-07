@@ -1,24 +1,22 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-// import { ORIGIN_URI } from "./constants.js"
 
 
+//adding express as app
 const app = express()
+
+// Adding the CROS middleware
 app.use(cors({
     origin: ["https://flixxit-frontend-beta.vercel.app"],
     methods: ["POST", "GET", "PUT"],
     credentials: true
 }))
 
+// Adding middleware in express
 app.use(express.json({ limit: "16kb" }))
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(cookieParser())
-
-app.get("/test", (req, res) => {
-    res.send("Hello world")
-})
-
 
 
 // routes import
