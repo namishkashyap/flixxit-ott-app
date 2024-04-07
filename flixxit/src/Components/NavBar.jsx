@@ -73,7 +73,7 @@ export default function Navbar() {
             </ul>
           </nav>
           <div id="rightNavIcon">
-            <div className="searchBarContainer">
+{/*             <div className="searchBarContainer">
               <input
                 onClick={searchHandler}
                 placeholder="Search"
@@ -81,7 +81,7 @@ export default function Navbar() {
                 type="input"
               />
               <FaSearch />
-            </div>
+            </div> */}
             <div className="profileContainer">
               <FaUserAstronaut className="profileIcon" />
               <div className="profileOption">
