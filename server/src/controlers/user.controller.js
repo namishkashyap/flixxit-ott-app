@@ -4,34 +4,41 @@ import { apiError } from "../utils/apiError.js";
 import jwt from "jsonwebtoken"
 import { apiResponse } from "../utils/apiResponse.js"
 
+
+// Regestring the the user
 const registerUser = asyncHandler(async (req, res) => {
     //get user details from frontend
     //validation - not empty
     //check if user aleardy exist: username and email
-    //check for images, check for avatar
-    //upload them to cloudinary, check avatar 
     //create user object - create entry in db
-    //remove password and refresh token field from response`
     //check for user creation
     //return response
+
+    // getting the data from the frontend
     const { fullName, email, password } = req.body
 
+    // Checking all fields a re empty or not
     if (
         [fullName, email, password].some((field) => field?.trim() === "")
     ) {
         throw new apiError(400, "All fields are required")
     }
+
+    // chenking the user is exist
     const existedUser = await User.findOne({ email })
 
     if (existedUser) {
         throw new apiError(409, "User with email already existed")
     }
+
+    // adding user in database
     const user = await User.create({
         fullName,
         email,
         password,
     })
 
+    // finding the user by ID and checking user created or not
     const createdUser = await User.findById(user._id).select(
         "-password -refreshTokken"
     )
@@ -45,23 +52,30 @@ const registerUser = asyncHandler(async (req, res) => {
 
 })
 
+
+// This code has login logic
 const login = asyncHandler(async (req, res) => {
     try {
+        // getting the data from the frontend
         const { email, password } = req.body
         if (!email || !password) {
             throw new apiError(401, "Email and password is required")
         }
 
+        // chenking the user is exist
         const user = await User.findOne({ email })
         if (!user) {
             throw new apiError(401, "Invalid email and password")
         }
 
+        // Checking the password is correct or not
         const isPasswordValid = await user.isPasswordCorrect(password)
 
         if (!isPasswordValid) {
             throw new apiError(401, "Invalid email and password")
         }
+
+
         const tokenData = {
             id: user._id
         }
@@ -79,7 +93,7 @@ const login = asyncHandler(async (req, res) => {
 
 })
 
-
+// This code has logout logic
 const logout = asyncHandler(async (req, res) => {
     return res.status(200).cookie("token", "", { expiresIn: new Date(Date.now()), httpOnly: true }).json({
         message: "User Logout Successfully",
@@ -87,39 +101,8 @@ const logout = asyncHandler(async (req, res) => {
     })
 })
 
-const updatedUser = asyncHandler(async (req, res) => {
-    const { fullName, email, password } = req.body
 
-    if (
-        [fullName, email, password].some((field) => field?.trim() === "")
-    ) {
-        throw new apiError(400, "All fields are required")
-    }
-    const existedUser = await User.findOne({ email })
-
-    if (existedUser) {
-        throw new apiError(409, "User with email already existed")
-    }
-    const user = await User.create({
-        fullName,
-        email,
-        password,
-    })
-
-    const createdUser = await User.findById(user._id).select(
-        "-password -refreshTokken"
-    )
-    if (!createdUser) {
-        throw new apiError(500, "Something went wrong while registering user")
-    }
-
-    return res.status(201).json(
-        new apiResponse(200, createdUser, "User register successfully")
-    )
-
-})
-
-
+//Adding liked movies in database
 const addMovieLista = asyncHandler(async (req, res) => {
     try {
 
@@ -146,6 +129,8 @@ const addMovieLista = asyncHandler(async (req, res) => {
 
 })
 
+
+// getting liked movies from database
 const getMovieLiked = asyncHandler(async (req, res) => {
     try {
 
@@ -161,6 +146,8 @@ const getMovieLiked = asyncHandler(async (req, res) => {
 
 })
 
+
+// Removing movie from the database
 const removeMovieFromList = asyncHandler(async (req, res) => {
     try {
         const { email, movieId } = req.body

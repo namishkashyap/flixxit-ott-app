@@ -4,6 +4,7 @@ import { addMovieLista, getMovieLiked, login, logout, registerUser, removeMovieF
 
 const router = Router()
 
+// Adding reoute and setting wich type of request it will handle
 router.route("/signup").post(registerUser)
 router.route("/login").post(login)
 router.route("/logout").get(logout)

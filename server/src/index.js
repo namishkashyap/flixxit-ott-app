@@ -6,6 +6,7 @@ dotenv.config({
     path: './.env'
 })
 
+// checking the PORT is listning or not
 connectdb()
     .then(() => {
         app.listen(process.env.PORT || 8000, () => {

@@ -1,3 +1,5 @@
+
+// Handeling response
 class apiResponse {
     constructor(statusCode, data, message = "Success") {
         this.statusCode = statusCode
