@@ -27,7 +27,7 @@ export default function CardSlider({ data, title }) {
       <div className="mainContainer">
         <h1>{title}</h1>
         <div className="wrapper">
-          <div className={`slider-action ${showControls ? "none" : ""} `}>
+          <div className={`slider-action left ${showControls ? "none" : ""} `}>
             <AiOutlineLeft
               onClick={() => handleDirection("left")}
             ></AiOutlineLeft>
@@ -75,10 +75,10 @@ const Container = styled.div`
       place-items: center;
       position: absolute;
       z-index: 99;
-height: 296px;
-    width: 150px;
-    top: 94px;
-    bottom: 0px;
+      height: 296px;
+      width: 150px;
+      top: 94px;
+      bottom: 0px;
       transition: 0.3s ease-in-out;
       svg {
         font-size: 2rem;
