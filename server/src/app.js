@@ -8,7 +8,7 @@ const app = express()
 
 // Adding the CROS middleware
 app.use(cors({
-    origin: ["https://flixxit-frontend-beta.vercel.app"],
+    origin: ["https://clever-marshmallow-a0b627.netlify.app"],
     methods: ["POST", "GET", "PUT"],
     credentials: true
 }))
