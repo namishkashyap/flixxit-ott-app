@@ -173,4 +173,4 @@ const removeMovieFromList = asyncHandler(async (req, res) => {
 )
 
 
-export { registerUser, login, logout, updatedUser, addMovieLista, getMovieLiked, removeMovieFromList }
+export { registerUser, login, logout, addMovieLista, getMovieLiked, removeMovieFromList }
