@@ -26,7 +26,7 @@ This repository contains a shopping app built using the MERN Fullstack OTT platf
 
 ---
 
-> [Working Demo](https://clever-marshmallow-a0b627.netlify.app/){:target="\_blank"}
+> [Working Demo](https://clever-marshmallow-a0b627.netlify.app/)
 
 ---
 
